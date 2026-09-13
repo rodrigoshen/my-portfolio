@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import SunEffect from "@/components/ui/SunEffect";
+import SunEffect from "./components/ui/SunEffect";
 import { useEffect, useRef, useState } from "react";
 import "./styles/parallax.css";
 
