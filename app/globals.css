@@ -1,6 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'Aeonik';
+    src: url("/fonts/Aeonik-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aeonik Light';
+    src: url("/fonts/Aeonik-Light.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bryndan Write Book';
+    src: url("/fonts/BryndanWriteBook-nGPM.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@theme {
+    --font-main : "Aeonik", sans-serif;
+    --font-main-light : "Aeonik Light", sans-serif;
+    --font-bryndan-write-book : "Bryndan Write Book", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     overflow-x: hidden;
+    color: white;
 }

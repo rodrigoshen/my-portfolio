@@ -8,3 +8,19 @@
     width: 100%;
     pointer-events: none ;
 }
+
+.cachoeira {
+     width: 500px;
+     height: 500px;
+     object-fit: contain;
+}
+
+.logo {
+    position: absolute;
+    will-change: transform;
+}
+
+.text-principal {
+    font-family: "Noto Serif";
+    font-weight: normal;
+}

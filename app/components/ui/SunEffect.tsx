@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default function SunEffect() {
   return (
     <div
-        className={``}
+        className={`absolute -top-50 -right-100`}
     >
     <StyledWrapper>
       <div className={`section-banner-sun`}>
