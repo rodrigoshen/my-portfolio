@@ -89,21 +89,23 @@ function HomeContent() {
       <main
         className=" flex flex-col justify-center items-center h-screen"  
       >
+
+        { innerWidthProperty 
+          ? 
+          <Image className="relative z-20" src={"/logo-1.png"} width={300} height={300} alt="logo-image"/>
+          : 
+          <Header
+          onClickScroll={scrollToSection}
+          />   
+        }        
         
-        <Header
-        onClickScroll={scrollToSection}
-        />   
             <video
           className="absolute inset-0 w-screen h-screen object-cover" 
           autoPlay playsInline loop muted>
             <source src="/videos/background.mp4" type="video/mp4"/>
             Your Browser does not support video tag.
           </video>
-               
-        
-        
-         
-         
+
          <motion.h1
          className="text-principal relative text-[#F8D097] text-6xl max-md:text-3xl font-bold z-10 top-0 left-0"
           variants={sentence}
@@ -134,28 +136,21 @@ function HomeContent() {
           } 
           <SunEffect/>
         </div> */}
-      
-        
-        
-       
-          
-        
-        
+
       </main>
 
       <section
         ref={refPrincipal}
-        className="principal relative flex justify-center items-center flex-row max-md:flex-col  gap-50 max-md:gap-0 bg-[#0089B8] h-auto p-10 max-md:h-auto max-md:pt-4 max-md:pb-4 overflow-x-hidden z-20"
+        className="principal relative flex justify-center items-center flex-row max-md:flex-col gap-50 max-md:gap-0 bg-[#0089B8] h-auto p-10 max-md:h-auto max-md:pt-10 max-md:pb-4 overflow-x-hidden z-20"
       >
         <div
-          className="flex flex-row items-center gap-30 w-[80%] max-md:w-screen max-md:flex-col"
+          className="flex flex-row justify-center items-center gap-30 max-md:gap-2 w-[80%] max-md:w-screen max-md:flex-col"
         >
             <motion.div
               initial={{ x : -100, opacity : 0 }}
-              animate={{ x : 0, opacity : 1 }}
+              whileInView={{ x : 0, opacity : 1 }}
               transition={{ ease : "anticipate", duration : 0.7 }}
-              whileInView="onscreen"
-              viewport={{ amount : 0.9 }}
+              viewport={{ once : true,  amount : 0.2 }}
             >
               { innerWidthProperty 
               ? 
@@ -174,18 +169,16 @@ function HomeContent() {
                 
                   <motion.h1
                 initial={{ x : 100, opacity : 0 }}
-                animate={{ x : 0, opacity : 1 }}
+                whileInView={{ x : 0, opacity : 1 }}
                 transition={{ ease : "anticipate", duration : 0.7 }}
-                whileInView="onscreen"
-                viewport={{ amount : 0.9 }}
+                viewport={{ once : true, amount : 0.2 }}
                   className="text-white text-5xl font-bold font-main"
                 >Olá👋, Sou Rodrigo Carvalho</motion.h1>
                 <motion.h2 
                   initial={{ x : 100, opacity : 0 }}
-                  animate={{ x : 0, opacity : 1 }}
+                  whileInView={{ x : 0, opacity : 1 }}
                   transition={{ ease : "anticipate", duration : 0.9 }}
-                  whileInView="onscreen"
-                  viewport={{ amount : 0.9 }}
+                  viewport={{ once: true,  amount : 0.1 }}
                   className="text-white text-3xl font-normal font-main"
                 >Desenvolvedor de Software Front-End e UX/UI Designer</motion.h2>
               </div>
@@ -193,10 +186,9 @@ function HomeContent() {
               
                 <motion.p
                 initial={{ x : 100, opacity : 0 }}
-                animate={{ x : 0, opacity : 0.75 }}
+                whileInView={{ x : 0, opacity : 0.75 }}
                 transition={{ ease : "anticipate", duration : 1.1 }}
-                whileInView="onscreen"
-                viewport={{ amount : 0.9 }}
+                viewport={{once: true, amount : 0.2, }}
                 className="opacity-0 text-xl font-main"
                 >
                   Trabalho com está área a mais de 4 anos de experiência e tenho conhecimentos em diversas habilidades técnicas e profissionais, cada vez aprendendo e desenvolvendo minhas redes sociais e soft skills para aprender mais sobre o mercado e dominar mais sobre esse mundo tão competitivo  
@@ -214,11 +206,15 @@ function HomeContent() {
         <div
           className="flex justify-center items-center w-[80%]"
         >
-          <h1
+          <motion.h1
+          initial={{ x : -100, opacity : 0 }}
+          whileInView={{ x : 0, opacity : 1 }}
+          transition={{ ease : "anticipate", duration : 1.1 }}
+          viewport={{once: true, amount : 0.2, }}
           className="flex items-center font-bold text-5xl font-main"
         >
           Criando soluções<br/> para o mundo<br/> digital de forma inteligente 🧠
-        </h1>
+        </motion.h1>
         </div>
         
 
