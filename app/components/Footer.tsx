@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react"
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Footer() {
@@ -47,7 +48,11 @@ export default function Footer() {
 
             <div className="w-[75%] h-[1px] bg-zinc-50"/>
 
-            <div
+            <motion.div
+                initial={{ opacity : 0 , y: 100 }}
+                whileInView={{ opacity : 1 , y: 0 }}
+                viewport={{ once: true, amount : 0.2 }}
+                transition={{ ease : "anticipate",  duration: 0.5 }}
                 className="flex justify-center items-center w-[80%] h-50"
             >
                 <h1
@@ -55,7 +60,7 @@ export default function Footer() {
                 >
                     Think Smart, Think Human
                 </h1>
-            </div>
+            </motion.div>
         </footer>
     )
 }

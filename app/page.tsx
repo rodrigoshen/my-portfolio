@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import TechnologyCarroselEffect from "./components/ui/TechnologyCarroselEffect";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Card from "./components/Card";
 
 function HomeContent() {
 
@@ -54,11 +55,8 @@ function HomeContent() {
     const handleScroll = () => {
       const value = window.scrollY;
 
-      if (sunEffectRef.current) {
-        sunEffectRef.current.style.marginTop = value * 0.7 + "px";
-        sunEffectRef.current.style.marginLeft = value + 0.7 + "px";
+      if (textPrincipalRef.current) {
         textPrincipalRef.current.style.marginTop = value * 0.7 + "px";
-
       }      
     }
 
@@ -92,7 +90,7 @@ function HomeContent() {
 
         { innerWidthProperty 
           ? 
-          <Image className="relative z-20" src={"/logo-1.png"} width={300} height={300} alt="logo-image"/>
+          <Image className="relative z-20 max-md:-top-10" src={"/logo-1.png"} width={300} height={300} alt="logo-image"/>
           : 
           <Header
           onClickScroll={scrollToSection}
@@ -107,7 +105,7 @@ function HomeContent() {
           </video>
 
          <motion.h1
-         className="text-principal relative text-[#F8D097] text-6xl max-md:text-3xl font-bold z-10 top-0 left-0"
+         className="text-principal relative text-[#F8D097] text-6xl max-md:text-3xl font-bold z-10 max-md:-'top-20 left-0"
           variants={sentence}
           initial="hidden"
           animate="visible"
@@ -161,10 +159,10 @@ function HomeContent() {
             </motion.div>
 
             <motion.div
-              className="flex flex-col gap-4 w-300 max-md:w-auto max-md:p-8 "
+              className="flex flex-col gap-4 w-[80%] max-md:w-auto max-md:p-8 "
             >
               <div
-                className="flex flex-col gap-1"
+                className="flex flex-col gap-2"
               >
                 
                   <motion.h1
@@ -172,14 +170,14 @@ function HomeContent() {
                 whileInView={{ x : 0, opacity : 1 }}
                 transition={{ ease : "anticipate", duration : 0.7 }}
                 viewport={{ once : true, amount : 0.2 }}
-                  className="text-white text-5xl font-bold font-main"
+                  className="text-white max-md:text-4xl text-5xl font-bold font-main"
                 >Olá👋, Sou Rodrigo Carvalho</motion.h1>
                 <motion.h2 
                   initial={{ x : 100, opacity : 0 }}
                   whileInView={{ x : 0, opacity : 1 }}
                   transition={{ ease : "anticipate", duration : 0.9 }}
                   viewport={{ once: true,  amount : 0.1 }}
-                  className="text-white text-3xl font-normal font-main"
+                  className="text-white max-md:text-2xl text-3xl font-normal font-main"
                 >Desenvolvedor de Software Front-End e UX/UI Designer</motion.h2>
               </div>
               
@@ -189,9 +187,9 @@ function HomeContent() {
                 whileInView={{ x : 0, opacity : 0.75 }}
                 transition={{ ease : "anticipate", duration : 1.1 }}
                 viewport={{once: true, amount : 0.2, }}
-                className="opacity-0 text-xl font-main"
+                className="opacity-0 max-md:text-md text-xl font-main"
                 >
-                  Trabalho com está área a mais de 4 anos de experiência e tenho conhecimentos em diversas habilidades técnicas e profissionais, cada vez aprendendo e desenvolvendo minhas redes sociais e soft skills para aprender mais sobre o mercado e dominar mais sobre esse mundo tão competitivo  
+                  Trabalho com está área a mais de 4 anos e tenho conhecimentos em diversas habilidades técnicas e profissionais, cada vez aprendendo e desenvolvendo minhas redes sociais e soft skills para aprender mais sobre o mercado e dominar mais sobre esse mundo de nossa nova geração.  
                 </motion.p>
               
             </motion.div>
@@ -230,6 +228,26 @@ function HomeContent() {
         
       </section>
 
+      <section
+        className="relative flex flex-col justify-center items-center bg-[#0089B8] z-20 pt-10 pb-10 gap-10">
+
+
+        <Card
+      image={"/logo-checkDesign.png"}
+      name={"CheckDesign"}
+      description={"Plataforma de design e desenvolvimento de soluções digitais."}
+      x={200}
+      />
+
+      <Card
+      image={"/logo-checkDesign.png"}
+      name={"CheckDesign"}
+      description={"Plataforma de design e desenvolvimento de soluções digitais."}
+      x={-200}
+      />
+
+      </section>
+      
 
       <Footer/>
 
