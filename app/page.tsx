@@ -9,12 +9,13 @@ import TechnologyCarroselEffect from "./components/ui/TechnologyCarroselEffect";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
+import PlantsBackground from "./components/ui/PlantsBackground";
 
 function HomeContent() {
 
   const [ innerWidthProperty, setInnerWidthProperty ] = useState<boolean>(false); 
   const refPrincipal = useRef<HTMLDivElement>(null);
-  const sunEffectRef = useRef<HTMLDivElement>(null) as any;
+  const logoRef = useRef<HTMLDivElement>(null);
   const textPrincipalRef = useRef<HTMLDivElement>(null) as any;
 
   const sentence = {
@@ -55,9 +56,14 @@ function HomeContent() {
     const handleScroll = () => {
       const value = window.scrollY;
 
-      if (textPrincipalRef.current) {
-        textPrincipalRef.current.style.marginTop = value * 0.7 + "px";
+      if (logoRef.current) {
+        logoRef.current.style.transform = `translateY(${value * 0.7}px)`;
       }      
+
+      if (textPrincipalRef.current) {
+        textPrincipalRef.current.style.transform = `translateY(${value * 0.7}px)`;
+      }
+
     }
 
     
@@ -85,18 +91,23 @@ function HomeContent() {
       className="h-auto"
     >
       <main
-        className=" flex flex-col justify-center items-center h-screen"  
+        className="flex flex-col justify-center items-center h-screen"  
       >
 
-        { innerWidthProperty 
-          ? 
-          <Image className="relative z-20 max-md:-top-10" src={"/logo-1.png"} width={300} height={300} alt="logo-image"/>
-          : 
+          <div
+          className="absolute -top-20 left-0 w-screen h-screen flex justify-center items-center z-10"
+            ref={logoRef}
+          >
+            <Image
+            className="relative z-10 max-md:-top-10 max-md:flex hidden" src={"/logo-1.png"} width={300} height={300} alt="logo-image"/>
+          </div>
+           
           <Header
           onClickScroll={scrollToSection}
           />   
-        }        
+                
         
+          
             <video
           className="absolute inset-0 w-screen h-screen object-cover" 
           autoPlay playsInline loop muted>
@@ -105,7 +116,7 @@ function HomeContent() {
           </video>
 
          <motion.h1
-         className="text-principal relative text-[#F8D097] text-6xl max-md:text-3xl font-bold z-10 max-md:-'top-20 left-0"
+         className="text-principal relative text-[#F8D097] text-6xl max-md:text-3xl font-bold z-10 left-0"
           variants={sentence}
           initial="hidden"
           animate="visible"
@@ -119,6 +130,7 @@ function HomeContent() {
               )
             })}
          </motion.h1>
+         <PlantsBackground/>
         
           
         {/* <div
@@ -152,7 +164,8 @@ function HomeContent() {
             >
               { innerWidthProperty 
               ? 
-              <Image className="rounded-full" src={"/images/photo-rodrigo.png"} width={300} height={300} alt="photo-rodrigo-carvalho"/>
+              <Image 
+              className="rounded-full" src={"/images/photo-rodrigo.png"} width={300} height={300} alt="photo-rodrigo-carvalho"/>
               : 
               <Image className="rounded-full" src={"/images/photo-rodrigo.png"} width={400} height={400} alt="photo-rodrigo-carvalho"/> }
               
@@ -240,9 +253,9 @@ function HomeContent() {
       />
 
       <Card
-      image={"/logo-checkDesign.png"}
-      name={"CheckDesign"}
-      description={"Plataforma de design e desenvolvimento de soluções digitais."}
+      image={"/logo-foodChegou.png"}
+      name={"FoodChegou"}
+      description={"Plataforma de delivery de comida."}
       x={-200}
       />
 

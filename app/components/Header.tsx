@@ -10,7 +10,7 @@ export default function Header(
 
     return (
         <header
-            className="fixed top-0 left-0 flex flex-row justify-around items-center bg-transparent backdrop-blur-xs  w-screen h-20 z-20"
+            className="fixed top-0 left-0 flex max-md:hidden flex-row justify-around items-center bg-transparent backdrop-blur-xs  w-screen h-20 z-20"
         >
             <div>
                 <Image
