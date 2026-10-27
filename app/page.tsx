@@ -246,6 +246,7 @@ function HomeContent() {
 
 
         <Card
+      link={"https://check-design-project.vercel.app/"}
       image={"/logo-checkDesign.png"}
       name={"CheckDesign"}
       description={"Plataforma de design e desenvolvimento de soluções digitais."}
@@ -253,6 +254,7 @@ function HomeContent() {
       />
 
       <Card
+      link={"https://food-chegou-app.vercel.app/"}
       image={"/logo-foodChegou.png"}
       name={"FoodChegou"}
       description={"Plataforma de delivery de comida."}

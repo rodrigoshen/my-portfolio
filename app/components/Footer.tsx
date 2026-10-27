@@ -14,32 +14,36 @@ export default function Footer() {
         <footer
             className="flex flex-col justify-between items-center bg-[#0089B8] h-auto pb-10 pt-20 gap-20"
         >
-            <div>
+            <div 
+                className="flex flex-col justify-between items-start w-[80%] gap-10"
+            >
                 <div></div>
                 <div></div>
                 <div
-                    className="flex flex-col gap-1"
+                    className="flex flex-col justify-start items-start gap-1"
                 >
                     <h2
-                        className="font-main text-xl font-semibold"
+                        className="font-main text-3xl font-semibold"
                     >
                         Redes Sociais
                     </h2>
                     <nav
                         className="flex flex-row gap-2"
                     >
-                         <a href="">
-                        <Image src="/icons/linkedin.png" width={25} height={25} alt="whatsapp-image"  />
+                         <a href="https://www.linkedin.com/in/rodrigo-carvalho-designer" target="_blank" rel="noopener noreferrer">
+                        <Image src="/icons/linkedin.png" width={50} height={50} alt="whatsapp-image"/>
                         </a>
-                        <a href="">
-                            <Image src="/icons/whatsapp.png" width={25} height={25} alt="whatsapp-image"  />
+                        <a href="https://wa.me/558597376799" target="_blank" rel="noopener noreferrer">
+                            <Image src="/icons/whatsapp.png" width={50} height={50} alt="whatsapp-image"  />
                         </a>
                         <a 
                         className="bg"
                         rel="noopener noreferrer"
                         target="_blank"
                         href={link}> 
-                            <Mail/>
+                            <Mail
+                                size={50}
+                            />
                         </a>
                     </nav>
                    

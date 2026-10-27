@@ -6,12 +6,13 @@ import { useRef, useState } from "react"
 interface CardProps {
     image : string
     name : string
-    description : string
+    description : string 
+    link : string
     x? : number
 }
 
 export default function Card(
-    { image, name, description, x } : CardProps
+    { image, name, description, x, link } : CardProps
 ) {
 
 
@@ -45,6 +46,7 @@ export default function Card(
             </button>
 
             <ModalCard
+                link={link}
                 image={image}
                 open={isModalOpen}
                 modalClose={() => setIsModalOpen(false)}

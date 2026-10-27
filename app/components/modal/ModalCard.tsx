@@ -6,10 +6,11 @@ interface ModalCardProps {
     name : string
     description : string
     open :  boolean
+    link : string
     image : string
 }
 
-export default function ModalCard( { modalClose, name, description, open, image } : ModalCardProps ) {
+export default function ModalCard( { modalClose, name, description, open, image, link } : ModalCardProps ) {
 
     const handleClickOverlay = (e : React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (e.target === e.currentTarget) {
@@ -44,6 +45,14 @@ export default function ModalCard( { modalClose, name, description, open, image 
                     >
                         { description }
                     </p>
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 bg-[#0089B8] text-white px-4 py-2 rounded-md hover:bg-[#0089B8]/80 hover:scale-95 transition-all duration-300"
+                    >
+                        Ver Projeto
+                    </a>
             </div>
         </div>
     )

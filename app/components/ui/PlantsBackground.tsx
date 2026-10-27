@@ -29,29 +29,45 @@ export default function PlantsBackground() {
                     width 
                     ? 
                      <Image 
-                    className="absolute mt-180 ml-0  z-60"
+                    className="absolute mt-200 ml-0 z-10"
                     src="/images/plants/1.png" width={200} height={200} alt="plant-image" />
                     :
                      <Image 
-                    className="absolute mt-180 ml-120  z-60"
+                    className="absolute mt-180 ml-120 z-60"
                     src="/images/plants/1.png" width={500} height={500} alt="plant-image" />
                 }
                
-                <Image src="/images/plants/2.png" width={300} height={300} alt="plant-image" />
-                <Image src="/images/plants/3.png" width={300} height={300} alt="plant-image" />
+                <Image 
+                    className="absolute mt-200 ml-0 z-10"
+                    src="/images/plants/2.png" width={300} height={300} alt="plant-image" />
+                <Image 
+                    className="absolute mt-60 -ml-20 z-10"
+                        src="/images/plants/3.png" width={200} height={200} alt="plant-image" />
                 {
                     width ?
                         <Image 
-                    className="absolute mt-70 ml-30   z-60"
+                    className="absolute mt-190  ml-30 z-60"
                     src="/images/plants/4.png" width={1000} height={1000} alt="plant-image" />
                     :
                         <Image 
-                    className="absolute mt-30 ml-320 z-60"
+                    className="absolute mt-30 min-md:mt-120 ml-320 z-60"
                     src="/images/plants/4.png" width={1000} height={1000} alt="plant-image" />
                 }
 
-                <Image src="/images/plants/5.png" width={300} height={300} alt="plant-image" />
-                <Image src="/images/plants/6.png" width={300} height={300} alt="plant-image" />
+                <Image
+                className="absolute mt-180 ml-40 z-10"
+                src="/images/plants/5.png" width={300} height={300} alt="plant-image" />
+                {
+                    width 
+                    ?
+                    <Image 
+                className="absolute mt-0 min-md:mt-10 min-md:ml-400 ml-50 z-10"
+                src="/images/plants/6.png" width={300} height={300} alt="plant-image" />
+                :
+                <Image 
+                className="absolute mt-0 min-md:mt-10 min-md:ml-370 ml-50 z-10"
+                src="/images/plants/6.png" width={600} height={600} alt="plant-image" />
+                }
                 {
                     width 
                     ?
